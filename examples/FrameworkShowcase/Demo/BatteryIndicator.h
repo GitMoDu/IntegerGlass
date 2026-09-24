@@ -13,11 +13,19 @@ namespace Showcase
 	namespace BatteryIndicator
 	{
 		template<typename ParentLayout>
+		static constexpr int16_t HorizontalMargin()
+		{
+			return ParentLayout::Width() < ParentLayout::Height()
+				? Constants::Showcase::Margin<ParentLayout>()
+				: 0;
+		}
+
+		template<typename ParentLayout>
 		using MarginLayout = Framework::Layout::Margin<
 			ParentLayout,
-			0,
+			HorizontalMargin<ParentLayout>(),
 			Constants::Showcase::Margin<ParentLayout>(),
-			0,
+			HorizontalMargin<ParentLayout>(),
 			0>;
 
 		template<typename ParentLayout>

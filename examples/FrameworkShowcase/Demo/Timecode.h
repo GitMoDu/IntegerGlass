@@ -20,12 +20,21 @@ namespace Showcase
 			0,
 			0>;
 
+		template<typename ParentLayout>
+		using AspectAlignedLayout = Framework::Layout::Align<
+			ParentLayout,
+			Framework::Layout::ConstrainedRatio<
+				MarginLayout<ParentLayout>,
+				Constants::Timecode::AspectRatioWidth,
+				Constants::Timecode::AspectRatioHeight>,
+			Framework::Layout::AlignmentEnum::MiddleCenter>;
+
 
 		template<typename ParentLayout, bool Monochrome = false>
-		class View : public IDemoPage, public Modules::Timecode::Demo::DemoView<MarginLayout<ParentLayout>, Monochrome>
+		class View : public IDemoPage, public Modules::Timecode::Demo::DemoView<AspectAlignedLayout<ParentLayout>, Monochrome>
 		{
 		private:
-			using Base = Modules::Timecode::Demo::DemoView<MarginLayout<ParentLayout>, Monochrome>;
+			using Base = Modules::Timecode::Demo::DemoView<AspectAlignedLayout<ParentLayout>, Monochrome>;
 
 		public:
 			View() : IDemoPage(), Base() {}

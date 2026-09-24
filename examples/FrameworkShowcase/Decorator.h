@@ -40,7 +40,7 @@ namespace Showcase
 		template<typename ParentLayout>
 		static constexpr int16_t TextHeight()
 		{
-			return (Constants::Showcase::StripHeight<ParentLayout>() * 6) / 10;
+			return (Constants::Showcase::StripHeight<ParentLayout>() * Constants::Decorator::Scale) / 10;
 		}
 
 		template<typename ParentLayout>

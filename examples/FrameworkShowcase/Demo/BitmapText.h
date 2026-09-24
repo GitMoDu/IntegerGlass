@@ -18,7 +18,7 @@ namespace Showcase
 		static constexpr uint8_t FontScale()
 		{
 			return MaxValue<uint8_t>(1, static_cast<uint8_t>(ParentLayout::Height() /
-				(static_cast<uint16_t>(TextFontType::GetFontHeight()) * 4)));
+				(static_cast<uint16_t>(TextFontType::GetFontHeight()) * Constants::Text::Scale)));
 		}
 
 		template<typename ParentLayout>

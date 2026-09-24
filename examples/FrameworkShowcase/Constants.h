@@ -104,13 +104,20 @@ namespace Showcase
 
 		namespace VectorImage
 		{
-			static constexpr uint32_t SizePeriod = 3000000;
+			static constexpr uint32_t SizePeriod = 4000000;
 		}
 
 		namespace Text
 		{
-			static constexpr uint32_t ScrollPeriod = 7000000;
+			static constexpr uint8_t Scale = 8;
+			static constexpr uint32_t ScrollPeriod = 5000000;
 			static constexpr uint32_t VectorSizePeriod = 3000000;
+		}
+
+		namespace Timecode
+		{
+			static constexpr int16_t AspectRatioWidth = 3;
+			static constexpr int16_t AspectRatioHeight = 1;
 		}
 
 		namespace Terminal
@@ -137,6 +144,7 @@ namespace Showcase
 			static constexpr UFraction16::scalar_t ShadowOpacity = UFraction16::GetScalar<int32_t>(90, 100);
 			static constexpr rgb_color_t TextColor = Rgb::Color(uint32_t(0xFFFFFF));
 			static constexpr rgb_color_t ShadowColor = Rgb::Color(uint32_t(0x000000));
+			static constexpr uint8_t Scale = 4;
 		}
 
 		namespace PageSlider

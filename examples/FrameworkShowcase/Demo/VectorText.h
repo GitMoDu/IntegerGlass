@@ -34,7 +34,7 @@ namespace Showcase
 			static constexpr dimension_t MinimumSize = MinValue<dimension_t>(
 				FontType::Width, FontType::Height);
 			static constexpr dimension_t MaximumSize = MaxValue<dimension_t>(
-				MinimumSize, MinValue<dimension_t>(ParentLayout::Width(), ParentLayout::Height()) / 4);
+			MinimumSize, MinValue<dimension_t>(ParentLayout::Width(), ParentLayout::Height()) / Constants::Text::Scale);
 			static constexpr dimension_t TextWidth = static_cast<dimension_t>(
 				(sizeof(Constants::Strings::FoxDoge) - 1) * FontType::Width);
 

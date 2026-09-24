@@ -31,7 +31,7 @@ using DisplayConfig = IntegerGlass::PlatformPresets::Configs::NRF52_SPI_GENERIC;
 // Display options definition. Adjust as needed and add to Framebuffer type definition below.
 using IntegerGlassOptions = IntegerGlass::DisplayOptions::TemplateOptions<
 	IntegerGlass::DisplayOptions::MirrorEnum::None,
-	IntegerGlass::DisplayOptions::RotationEnum::Rotate90,
+	IntegerGlass::DisplayOptions::RotationEnum::None,
 	false
 >;
 
