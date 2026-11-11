@@ -40,7 +40,7 @@ namespace IntegerGlass
 					struct Policy;
 
 					template<>
-					struct Policy<IntegerSignal::TypeTraits::Evaluation::ConstantEvaluatedType>
+					struct Policy<IntegerSignal::TypeTraits::TypeEvaluation::ConstantEvaluatedType>
 					{
 						static constexpr uint32_t Get(const uint32_t elapsed, const uint32_t period)
 						{
@@ -51,7 +51,7 @@ namespace IntegerGlass
 					};
 
 					template<>
-					struct Policy<IntegerSignal::TypeTraits::Evaluation::RuntimeEvaluatedType>
+					struct Policy<IntegerSignal::TypeTraits::TypeEvaluation::RuntimeEvaluatedType>
 					{
 						template<uint32_t period>
 						static constexpr uint32_t Get(const uint32_t elapsed)
@@ -112,7 +112,7 @@ namespace IntegerGlass
 				inline constexpr uint32_t Triangle(const uint32_t elapsed)
 				{
 					return TriangleDetail::Get(elapsed, period,
-						IntegerSignal::TypeTraits::Evaluation::GetEvaluationTag());
+						IntegerSignal::TypeTraits::TypeEvaluation::GetEvaluationTag());
 				}
 
 				/// <summary>
@@ -124,7 +124,7 @@ namespace IntegerGlass
 				inline constexpr uint32_t Triangle(const uint32_t elapsed, const uint32_t period)
 				{
 					return TriangleDetail::Get(elapsed, period,
-						IntegerSignal::TypeTraits::Evaluation::GetEvaluationTag());
+						IntegerSignal::TypeTraits::TypeEvaluation::GetEvaluationTag());
 				}
 
 				/// <summary>
